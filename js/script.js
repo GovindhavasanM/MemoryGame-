@@ -1,8 +1,11 @@
 const cards = document.querySelectorAll('.memory-card');
-
+const gameContainer=document.getElementById('memoryGame');
+const scoreCard=document.getElementById('score');
+const scoreContainer=document.getElementById('scoreContainer');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let score=0;
 
 function flipCard() {
     if (lockBoard) return true;
@@ -31,7 +34,16 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
-
+  score++;
+  scoreCard.innerText=`score:${score}`;
+  if(score===6) {
+    gameContainer.innerHTML=`<div class='gameover'>
+<h1 >You Won the Game🎉🎊</h1>
+<h2>your score is ${score}</h2>
+<a href='index.html'>Restart</a>
+</div>`;
+scoreContainer.innerHTML=``
+}
   resetBoard();
 }
 

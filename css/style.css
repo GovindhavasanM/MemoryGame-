@@ -6,12 +6,47 @@
 
 body {
     height: 100vh;
-    display: flex;
     background: #61ff39ea;
+    }
+    
+    .scoreContainer {
+        display: flex;
+        justify-content: center;
+            gap: 40vw;
+            margin: 10px 0;
+        
+            button {
+                padding: 0 2px;
+                font-weight: 600;
+        
+                a {
+                    text-decoration: none;
+        
+                }
+            }
+        }
+        
+        .gameover {
+            width: 100vw;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        
+            h1 {
+                font-size: 2rem;
+            }
+        
+            a {
+                text-decoration: none;
+                font-size: 1.5rem;
+            }
 }
 .memory-game {
-    width: 840px;
-    height: 840px;
+    width: 85vw;
+        height: 650px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
